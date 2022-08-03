@@ -112,7 +112,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  transition: all 250ms linear;
+  transition: opacity 250ms linear;
 }
 
 .anim {
