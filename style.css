@@ -1,0 +1,178 @@
+/* ייבוא פונט פרטי */
+@font-face {
+  font-family: "Elkana";
+  src: url(Assets/Fonts/BN\ Elkana.ttf);
+}
+
+/* עיצוב האייקונים של האינפוטים */
+::-webkit-calendar-picker-indicator {
+  background-color: #fff;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* עיצוב Scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background: #9191916b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2be0a;
+  border-radius: 20px;
+}
+
+/* איפוס עיצוב ברירת מחדל */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Elkana", sans-serif;
+}
+
+/* הגדרת כיוון הטופד לעברית (ימין לשמאל) */
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: "Elkana", sans-serif;
+  background-image: url(Assets/tile.jpg);
+  background-repeat: repeat;
+}
+
+#mainHeading {
+  font-weight: 400;
+  font-size: 5rem;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(53, 53, 53, 0.7);
+}
+
+#form {
+  font-family: "Elkana", sans-serif;
+  background-image: linear-gradient(
+      rgba(39, 39, 39, 0.8),
+      rgba(39, 39, 39, 0.8)
+    ),
+    url(Assets/רקע\ מחברת.jpg);
+  /* color: #fff; */
+  background-repeat: repeat-y;
+  background-size: 700px 90px;
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(1px);
+  color: #fff;
+  /* filter: blur(2px); */
+}
+
+.task_design {
+  justify-content: end;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0rem;
+  font-size: 1.8rem;
+  color: #fff;
+  text-indent: 1rem;
+  border-bottom: 3px solid #fff;
+}
+
+.task_design:focus {
+  outline: none;
+  color: #fff;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#sub {
+  font-family: "Elkana", sans-serif;
+}
+
+.date {
+  font-family: "Assistant", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.time {
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+}
+
+.note {
+  opacity: 1;
+  background: url(Assets/notebg.png);
+  width: 250px;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 250ms;
+}
+
+.anim {
+  transition: 250ms;
+  /* transform: scale(150%); */
+  opacity: 1;
+}
+
+/* #note_2 {
+  transition: 250ms;
+  transform: scale(150%);
+  opacity: 1;
+} */
+
+/* אנימציית כניסה */
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+.note p {
+  height: 170px;
+  margin-top: 0.6rem;
+  margin-right: 2rem;
+  margin-left: 0.2rem;
+  color: #333;
+  font-size: 2rem;
+  line-height: 1.4rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  /* scroll-behavior: smooth; */
+}
+
+.note .date,
+.time {
+  direction: ltr;
+  margin-left: 0.75rem;
+}
+
+.note i {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.trash_hide {
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  transform: scale(0.1);
+  opacity: 0;
+}
+.trash_show {
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  border-radius: 1rem;
+  background-color: #bb2d3b;
+  color: #fff;
+}

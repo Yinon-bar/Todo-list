@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>לוח משימות | ינון בר</title>
+    <!-- BootStrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <!-- Costum css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Assistant Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/d35887ce90.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="getTasks()">
+    <h1 id="mainHeading" class="pt-3 shadow-lg">לוח המשימות שלי</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <form id="form" method="get" class="w-50 mx-auto shadow">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fs-1 mx-auto"
+              >הכנס משימה</label
+            >
+            <input
+              type="text"
+              class="form-control task_design"
+              id="task-name"
+              value="ורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיא"
+              required
+            />
+          </div>
+          <div class="mb-3 mt-4">
+            <label for="task-date" class="form-label fs-1"
+              >הכנס תאריך לביצוע</label
+            >
+            <input
+              type="date"
+              class="form-control fs-4 date task_design"
+              id="task-date"
+              value="2022-07-30"
+              required
+            />
+          </div>
+          <div class="mb-3 mt-4">
+            <label for="task-time" class="form-label fs-1"
+              >הכנס שעה לביצוע</label
+            >
+            <input
+              type="time"
+              class="form-control time task_design"
+              id="task-time"
+              value="19:30"
+              required
+            />
+          </div>
+          <div class="mt-4 mx-auto d-flex justify-content-lg-evenly">
+            <input
+              id="sub"
+              type="submit"
+              value="הכנס משימה"
+              class="btn btn-primary fs-3"
+              onclick="createTask()"
+            />
+            <button
+              onclick="resetForm()"
+              id="reset"
+              class="btn btn-warning fs-3"
+            >
+              אפס טופס
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- |||||||||||||||||||||||||||||||||||||||||||||||||| -->
+      <div class="row mt-4 col-lg-12 tasksDisp" id="notes_section">
+        <!-- משימה לביצוע אחת לדוגמא -->
+        <!-- |||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <!-- <div class="note">
+          <div class="task-content">
+            <p>
+              לדבר עם משה בקשר לתכניות של המקום - צריך להרוס! כמה שיותר מהר - זה
+              ממש דחוף כבר!!! עכשיו אני סתאם דוחף עוד טקסט כי אני צריך שיהיה לי
+              אורך מסויים וככל שאני כותב אני רואה שזה עובד מצויין
+            </p>
+          </div>
+          <div class="date">27/11/2022</div>
+          <div class="time">19:48</div>
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
