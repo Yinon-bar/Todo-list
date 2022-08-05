@@ -100,7 +100,7 @@ function trashHover(arg) {
 
 function deleteTask(objId) {
   // location.reload();
-  localStorage.clear();
+  // localStorage.clear();
   taskArray.splice(objId, 1);
   console.log(taskArray);
   saveToLocal(taskArray);
