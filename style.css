@@ -115,26 +115,24 @@ body {
   transition: opacity 250ms linear;
 }
 
+/* קריאה לאנימציית כניסה לכל מי שיקבל את הקלאס הזה */
 .anim {
-  /* transform: scale(150%); */
   opacity: 1;
+  animation: fadeIn;
+  animation-duration: 0.3s;
 }
 
-/* #note_2 {
-  transition: 250ms;
-  transform: scale(150%);
-  opacity: 1;
-} */
-
 /* אנימציית כניסה */
-/* @keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
+    scale: 0;
   }
   to {
+    scale: 1;
     opacity: 1;
   }
-} */
+}
 
 .note p {
   height: 170px;

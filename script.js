@@ -8,12 +8,9 @@ const noteSection = document.querySelector("#notes_section");
 // יצירת מערך גלובלי
 let taskArray = [];
 
-// מונה משימות
-// let counter = 0;
-
 // בדיקה האם יש לנו "משימות" בזכרון
 // ואם כן, להדפיס אותם לדום
-function getTasks() {
+function getTasks(arg) {
   if (localStorage.getItem("tasks")) {
     let arrTask = JSON.parse(localStorage.getItem("tasks"));
     taskArray = [];
@@ -22,10 +19,7 @@ function getTasks() {
       // console.log(task);
       task.id = taskArray.length;
       taskArray.push(task);
-      renderElement(task);
-      // console.log(task);
-      // counter++;
-      // console.log(taskArray);
+      renderElement(task, arg);
     }
   }
 }
@@ -55,7 +49,7 @@ function saveToLocal(arr) {
   localStorage.setItem("tasks", JSON.stringify(arr));
 }
 
-function renderElement(obj) {
+function renderElement(obj, arg = "") {
   noteSection.innerHTML += `
   <div class="note anim" id="note_${obj.id}" onmouseenter="trashHover(${obj.id})" onmouseleave="trashHover(${obj.id})">
   <div class="task-content">
@@ -68,16 +62,16 @@ function renderElement(obj) {
   <div class="time">${obj.time}</div>
   </div>
   `;
-  // const noteAnim = document.getElementById(`note_${obj.id}`);
-  // noteAnim.classList.add("note");
-  // noteAnim.classList.add("anim");
-
-  // resetForm();
-  // const noteAnim = document.getElementById(`note_${obj.id}`);
-  // // console.log(noteAnim);
-  // noteAnim.classList.add("anim");
-  // noteAnim.classList.remove("anim");
-  // noteAnim.style.animationIterationCount = "1";
+  // בדיקה האם לבצע את האנימציה
+  if (arg) {
+    let animDiv = document.querySelector(".anim");
+    animDiv.classList.remove("anim");
+  } else {
+    setTimeout(function () {
+      let animDiv = document.querySelector(".anim");
+      animDiv.classList.remove("anim");
+    }, 400);
+  }
 }
 
 function resetForm() {
@@ -104,5 +98,7 @@ function deleteTask(objId) {
   taskArray.splice(objId, 1);
   console.log(taskArray);
   saveToLocal(taskArray);
-  getTasks();
+  // יש לקרוא לפונקציה שבודקת האם יש משימות ב"זכרון" ולרנדר אותם
+  // ןלהכניס לה ארגומנט כדי שהפונקציה תדע שהיא הגיעה מכאן
+  getTasks("doNotAnim");
 }
