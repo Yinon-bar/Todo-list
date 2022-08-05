@@ -28,21 +28,24 @@
     ></script>
   </head>
   <body onload="getTasks()">
-    <h1 id="mainHeading" class="pt-3 shadow-lg">לוח המשימות שלי</h1>
+    <h1 id="mainHeading" class="pt-2 shadow-lg">לוח המשימות שלי</h1>
     <div class="container">
-      <div class="row mt-5">
-        <form id="form" method="get" class="w-50 mx-auto shadow">
+      <div id="main_section" class="row mt-5">
+        <form
+          style="padding-top: 2.3rem"
+          id="form"
+          method="get"
+          class="w-50 mx-auto shadow"
+        >
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label fs-1 mx-auto"
-              >הכנס משימה</label
-            >
-            <input
-              type="text"
-              class="form-control task_design"
+            <label for="task-name" class="form-label fs-1">הכנס משימה</label>
+            <textarea
               id="task-name"
-              value="ורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיא"
+              class="form-control task_design"
+              cols="20"
+              rows="1"
               required
-            />
+            ></textarea>
           </div>
           <div class="mb-3 mt-4">
             <label for="task-date" class="form-label fs-1"
@@ -52,7 +55,6 @@
               type="date"
               class="form-control fs-4 date task_design"
               id="task-date"
-              value="2022-07-30"
               required
             />
           </div>
@@ -64,11 +66,10 @@
               type="time"
               class="form-control time task_design"
               id="task-time"
-              value="19:30"
               required
             />
           </div>
-          <div class="mt-4 mx-auto d-flex justify-content-lg-evenly">
+          <div id="btns" class="mt-4 mx-auto d-flex justify-content-lg-evenly">
             <input
               id="sub"
               type="submit"
@@ -82,6 +83,13 @@
               class="btn btn-warning fs-3"
             >
               אפס טופס
+            </button>
+            <button
+              id="delete_all"
+              onclick="deleteAll()"
+              class="btn btn-danger fs-3"
+            >
+              מחק הכל
             </button>
           </div>
         </form>

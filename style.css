@@ -48,13 +48,14 @@ body {
 
 #mainHeading {
   font-weight: 400;
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: center;
   color: #fff;
   background-color: rgba(53, 53, 53, 0.7);
 }
 
 #form {
+  padding: 5rem;
   font-family: "Elkana", sans-serif;
   background-image: linear-gradient(
       rgba(39, 39, 39, 0.8),
@@ -66,9 +67,7 @@ body {
   background-size: 700px 90px;
   padding: 3rem 5rem;
   border-radius: 2rem;
-  backdrop-filter: blur(1px);
   color: #fff;
-  /* filter: blur(2px); */
 }
 
 .task_design {
@@ -117,7 +116,6 @@ body {
 
 /* קריאה לאנימציית כניסה לכל מי שיקבל את הקלאס הזה */
 .anim {
-  opacity: 1;
   animation: fadeIn;
   animation-duration: 0.3s;
 }
