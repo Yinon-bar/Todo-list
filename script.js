@@ -4,6 +4,7 @@ let taskName = document.querySelector("#task-name");
 let taskDate = document.querySelector("#task-date");
 let taskTime = document.querySelector("#task-time");
 let noteSection = document.querySelector("#notes_section");
+let form = document.querySelector("#form");
 
 // יצירת מערך גלובלי
 let taskArray = [];
